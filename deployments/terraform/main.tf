@@ -1,9 +1,9 @@
 module "helm_deploy" {
   source = "fuchicorp/chart/helm"
   deployment_name           = "${var.deployment_name}"
-  deployment_enviroment     = "${var.deployment_enviroment}"
+  deployment_environment    = "${var.deployment_environment}"
   deployment_endpoint       = "${lookup(var.deployment_endpoint, "${var.deployment_environment}")}.${var.google_domain_name}"
-  deployment_path           = "hello-worl"
+  deployment_path           = "hello-world"
   template_custom_vars = { 
     deployment_image        = "${var.deployment_image}" 
   }
@@ -14,8 +14,8 @@ variable "deployment_name" {
   description = "- (Optional) The name of the deployment"
 }
 
-variable "deployment_enviroment" {
-  default = "prod"
+variable "deployment_environment" {
+  default = "dev"
   description = "- (Optional) The namespace to deploy the helm chart"
 }
 
@@ -37,3 +37,4 @@ variable "deployment_image" {
 variable "google_domain_name"{
   default = "aiperisarinzhi.com"
 }
+
