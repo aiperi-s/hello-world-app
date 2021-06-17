@@ -31,4 +31,4 @@ override.tf.json
 
 # Google creds 
 
-fuchicopr-service-account.json
+fuchicorp-service-account.json
